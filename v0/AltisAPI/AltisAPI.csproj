@@ -61,6 +61,7 @@
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Text.Encodings.Web, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Text.Encodings.Web.7.0.0\lib\net462\System.Text.Encodings.Web.dll</HintPath>
     </Reference>
@@ -96,12 +97,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AltScan.aspx" />
     <Content Include="Default.aspx" />
+    <Content Include="Login.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AltisUI.cs">
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AltScan.aspx.cs">
+      <DependentUpon>AltScan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AltScan.aspx.designer.cs">
+      <DependentUpon>AltScan.aspx</DependentUpon>
     </Compile>
     <Compile Include="Db.cs" />
     <Compile Include="Default.aspx.cs">
@@ -111,14 +121,13 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Entities\OneDriveAccessToken.cs" />
-    <Compile Include="Entities\OneDriveError.cs" />
-    <Compile Include="Entities\OneDriveItemBase.cs" />
-    <Compile Include="Entities\OneDriveUserProfile.cs" />
-    <Compile Include="Exceptions\InvalidResponseException.cs" />
-    <Compile Include="Exceptions\TokenRetrievalFailedException.cs" />
-    <Compile Include="Helpers\QueryStringBuilder.cs" />
-    <Compile Include="OneDriveGraphApi.cs" />
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -135,6 +144,13 @@
       <Project>{56020f0f-bffa-4acf-8be0-c2e0e78ce769}</Project>
       <Name>BLL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\OneDriveApi\OneDriveApi.csproj">
+      <Project>{228c55c2-5d5a-4618-ba99-10493f465ee0}</Project>
+      <Name>OneDriveApi</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Upload\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

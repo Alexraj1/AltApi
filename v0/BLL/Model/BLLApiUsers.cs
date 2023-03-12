@@ -11,13 +11,19 @@ namespace BLL
     {
         public string UserPrincipalName { get; set; }
         public string Code { get; set; }
-        public string AccessToken { get; set; }
-        public string RefreshToken { get; set; }
+        //public string AccessToken { get; set; }
+        //public string RefreshToken { get; set; }
         public string AccessTokenValid { get; set; }
         public string Id { get; set; }
         public string DisplayName { get; set; }
         public string GivenName { get; set; }
         public string SurName { get; set; }
+        public string TokenType { get; set; }
+        public string AccessToken { get; set; }
+        public int AccessTokenExpirationDuration { get; set; }
+        public string RefreshToken { get; set; }
+        public string Scopes { get; set; }
+        public string AuthenticationToken { get; set; }
 
     }
 }

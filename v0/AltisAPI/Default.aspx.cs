@@ -1,4 +1,6 @@
 ﻿using AltApi;
+using AltApi.Api;
+using BLL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,20 +10,11 @@ using System.Web.Configuration;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace AltisAPI
+namespace AltApi
 {
     public partial class Default : AltisUI
     {
-        #region Properties
-
-        public OneDriveGraphApi OneDriveApi;
-        public string AuthorizationCodeTextBox { get; set; }
-        public string CurrentUrlTextBox { get; set; }
-        public string AccessTokenTextBox { get; set; }
-        public string RefreshTokenTextBox { get; set; }
-        public string AccessTokenValidTextBox { get; set; }
-
-        #endregion
+        private string fileToUpload = @"C:\Users\User\Documents\GitHub\Altis\AltApi\Sample\test.pdf";
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -36,6 +29,11 @@ namespace AltisAPI
                 {
                     lblstatut.Text = "Redirecting";
                     RegisterAsyncTask(new PageAsyncTask(GetTokenAsync));
+                }
+                if (Request.QueryString["login"] != null)
+                {
+                    lblstatut.Text = "Login in";
+                  //  RegisterAsyncTask(new PageAsyncTask(UploaddDocumentAsync));
                 }
             }
         }
@@ -81,8 +79,6 @@ namespace AltisAPI
         {
             try
             {
-
-
                 AuthorizationCodeTextBox = Request.QueryString["code"];
                 OneDriveApi.SetAuthorizationToken(AuthorizationCodeTextBox);
                 Log("[API] Code : " + AuthorizationCodeTextBox);
@@ -101,6 +97,9 @@ namespace AltisAPI
                     {
                         Db db1 = new Db();
                         db1.AddUser(OneDriveApi);
+                        Session["OneDrive"] = OneDriveApi;
+                        // Upload the file to the root of the OneDrive
+                        //var data = await OneDriveApi.UploadFile(fileToUpload, await OneDriveApi.GetDriveRoot());
                         Log("[SQL] Code : " + AuthorizationCodeTextBox + Environment.NewLine + " User : " + OneDriveApi.oneDriveUserProfile.userPrincipalName + Environment.NewLine);
                     }
                     catch (Exception ex)
@@ -132,6 +131,61 @@ namespace AltisAPI
             Response.Redirect(signoutUri.AbsoluteUri);
         }
 
+        //private async Task UploaddDocumentAsync()
+        //{
+        //    try
+        //    {
+        //        UserFactory apiUsersFactory = new UserFactory();
+        //        BLLApiUsers bllUser = apiUsersFactory.Login("123");
+        //        OneDriveApi = new OneDriveGraphApi(GetConfig("GraphApiApplicationId"), GetConfig("LocalUrl"), GetConfig("GraphApiClientSecret"));
+        //        OneDriveApi.ProxyConfiguration = System.Net.WebRequest.DefaultWebProxy;
+        //        OneDriveApi.AccessToken = new OneDriveAccessToken();
+        //        OneDriveApi.SetAuthorizationToken(bllUser.Code);
+        //       // _ = await OneDriveApi.GetAccessToken();
+
+        //        OneDriveApi.AccessToken.TokenType = bllUser.TokenType;
+        //        OneDriveApi.AccessToken.AccessToken = bllUser.AccessToken;
+        //        OneDriveApi.AccessToken.AccessTokenExpirationDuration = bllUser.AccessTokenExpirationDuration;
+        //        OneDriveApi.AccessToken.RefreshToken = bllUser.RefreshToken;
+        //        OneDriveApi.AccessToken.Scopes = bllUser.Scopes;
+        //        OneDriveApi.AccessToken.AuthenticationToken = bllUser.AuthenticationToken;
+        //        //   OneDriveApi.AuthorizationToken = bllUser.AccessToken;
+        //        // await OneDriveApi.GetAccessToken();
+        //        if (OneDriveApi.AccessToken != null)
+        //        {
+        //        }
+
+
+        //        string fileToUpload = txtUploadFile.Text;
+
+        //        // Define the anonynous method to respond to the file upload progress events
+        //        EventHandler<OneDriveUploadProgressChangedEventArgs> progressHandler = delegate (object s, OneDriveUploadProgressChangedEventArgs a) { txtResult.Text += $"Uploading - {a.BytesSent} bytes sent / {a.TotalBytes} bytes total ({a.ProgressPercentage}%){Environment.NewLine}"; };
+
+        //        // Subscribe to the upload progress event
+        //        OneDriveApi.UploadProgressChanged += progressHandler;
+
+        //        // Upload the file to the root of the OneDrive
+        //        var data = await OneDriveApi.UploadFile(fileToUpload, await OneDriveApi.GetDriveRoot());
+
+        //        // Unsubscribe from the upload progress event
+        //        OneDriveApi.UploadProgressChanged -= progressHandler;
+
+        //        // Display the result of the upload
+        //        txtResult.Text = data != null ? data.OriginalJson : "Not available";
+
+        //    }
+        //    catch (Exception)
+        //    {
+
+        //        throw;
+        //    }
+        //}
+
         #endregion
+
+        //protected void btnUpload_Click(object sender, EventArgs e)
+        //{
+        //    RegisterAsyncTask(new PageAsyncTask(UploaddDocumentAsync));
+        //}
     }
 }

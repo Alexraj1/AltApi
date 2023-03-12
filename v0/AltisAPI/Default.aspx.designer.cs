@@ -7,7 +7,7 @@
 // </généré automatiquement>
 //------------------------------------------------------------------------------
 
-namespace AltisAPI
+namespace AltApi
 {
 
 

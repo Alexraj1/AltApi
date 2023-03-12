@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{5
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{9A221305-8F48-440F-BF67-6F1E7556652B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{8942FD49-7067-4C1A-8E42-CFDDBCEA0153}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OneDriveApi", "OneDriveApi\OneDriveApi.csproj", "{228C55C2-5D5A-4618-BA99-10493F465EE0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,10 @@ Global
 		{9A221305-8F48-440F-BF67-6F1E7556652B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9A221305-8F48-440F-BF67-6F1E7556652B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9A221305-8F48-440F-BF67-6F1E7556652B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8942FD49-7067-4C1A-8E42-CFDDBCEA0153}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8942FD49-7067-4C1A-8E42-CFDDBCEA0153}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8942FD49-7067-4C1A-8E42-CFDDBCEA0153}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8942FD49-7067-4C1A-8E42-CFDDBCEA0153}.Release|Any CPU.Build.0 = Release|Any CPU
+		{228C55C2-5D5A-4618-BA99-10493F465EE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{228C55C2-5D5A-4618-BA99-10493F465EE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{228C55C2-5D5A-4618-BA99-10493F465EE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{228C55C2-5D5A-4618-BA99-10493F465EE0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

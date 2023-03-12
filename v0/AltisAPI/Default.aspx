@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" Async="true" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="AltisAPI.Default" %>
+﻿<%@ Page Language="C#" Async="true" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="AltApi.Default" %>
 
 <!DOCTYPE html>
 
@@ -10,6 +10,10 @@
 <body>
     <form id="form1" runat="server">
         <asp:Label ID="lblstatut" runat="server" />
+        <a href="Login.aspx">Login avec Code (Pour test)</a>
+<%--         Fichier à uploader  <asp:TextBox ID="txtUploadFile" runat="server" Text="C:\Users\User\Documents\GitHub\Altis\AltApi\Sample\test.pdf"></asp:TextBox>
+       <asp:Button ID="btnUpload" runat="server" Text="Upload" OnClick="btnUpload_Click" />
+        <asp:TextBox ID="txtResult" runat="server"></asp:TextBox>--%>
     </form>
 </body>
 </html>

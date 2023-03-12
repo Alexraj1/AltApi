@@ -54,7 +54,9 @@
     <Compile Include="ApiContext.cs" />
     <Compile Include="ApiUsers.cs" />
     <Compile Include="ApiUsersFactory.cs" />
+    <Compile Include="CardDetails.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Users.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

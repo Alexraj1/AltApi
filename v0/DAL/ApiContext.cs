@@ -20,5 +20,7 @@ namespace DAL
 
         }
         public virtual DbSet<ApiUsers> ApiUsers { get; set; }
+        public virtual DbSet<Users> Users { get; set; }
+        public virtual DbSet<CardDetails> CardDetails { get; set; }
     }
 }

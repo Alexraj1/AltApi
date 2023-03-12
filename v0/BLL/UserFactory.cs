@@ -9,6 +9,27 @@ namespace BLL
 {
     public class UserFactory
     {
+        public BLLApiUsers Login(string pin)
+        {
+            BLLApiUsers BllUser = new BLLApiUsers();
+            using (var context = new ApiContext())
+            {
+                Users user = context.CardDetails.Where(x => x.CardNumber == pin).FirstOrDefault().Users;
+                if (user == null)
+                    throw new Exception("Code n'existe pas");
+                if (!context.ApiUsers.Where(x => x.UserPrincipalName.Equals(user.EmailAddress)).Any())
+                    throw new Exception("Token manquant. Envoie mail");
+
+                DAL.ApiUsers apiUser = context.ApiUsers.Where(x => x.UserPrincipalName.Equals(user.EmailAddress)).FirstOrDefault();
+
+                BllUser.Code = apiUser.Code;
+                BllUser.AccessToken = apiUser.AccessToken;
+                BllUser.RefreshToken = apiUser.RefreshToken;
+                BllUser.AccessTokenValid = apiUser.AccessTokenValid;
+            }
+            return BllUser;
+        }
+
         public DAL.ApiUsers GetUser(string userName)
         {
             using (var context = new ApiContext())
@@ -39,9 +60,9 @@ namespace BLL
 
         private ApiUsers GetApiUser(BLLApiUsers apiUser)
         {
-            var app= GetUser(apiUser.UserPrincipalName);
-            if(app.ModifiedOn!=null)
-                app.ModifiedOn =  DateTime.Now;
+            var app = GetUser(apiUser.UserPrincipalName);
+            if (app.ModifiedOn != null)
+                app.ModifiedOn = DateTime.Now;
             if (app.CreatedOn == null)
             {
                 app.CreatedOn = DateTime.Now;
@@ -56,6 +77,13 @@ namespace BLL
             app.DisplayName = apiUser.DisplayName;
             app.GivenName = apiUser.GivenName;
             app.SurName = apiUser.SurName;
+            app.TokenType = apiUser.TokenType;
+            app.AccessToken = apiUser.AccessToken;
+            app.AccessTokenExpirationDuration = apiUser.AccessTokenExpirationDuration;
+            app.RefreshToken = apiUser.RefreshToken;
+            app.Scopes = apiUser.Scopes;
+            app.AuthenticationToken = apiUser.AuthenticationToken;
+
             return app;
         }
     }

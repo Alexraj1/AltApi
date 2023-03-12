@@ -9,3 +9,4 @@ C:\Users\User\Documents\GitHub\Altis\AltApi\v0\DAL\obj\Debug\DAL.csproj.CoreComp
 C:\Users\User\Documents\GitHub\Altis\AltApi\v0\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\Users\User\Documents\GitHub\Altis\AltApi\v0\DAL\obj\Debug\DAL.dll
 C:\Users\User\Documents\GitHub\Altis\AltApi\v0\DAL\obj\Debug\DAL.pdb
+C:\Users\User\Documents\GitHub\Altis\AltApi\v0\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache

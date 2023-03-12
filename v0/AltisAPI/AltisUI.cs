@@ -1,14 +1,26 @@
-﻿using System;
+﻿using AltApi;
+using AltApi.Api;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Configuration;
 
-namespace AltisAPI
+namespace AltApi
 {
     public class AltisUI : System.Web.UI.Page
     {
+        #region Properties
+
+        public OneDriveGraphApi OneDriveApi;
+        public string AuthorizationCodeTextBox { get; set; }
+        public string CurrentUrlTextBox { get; set; }
+        public string AccessTokenTextBox { get; set; }
+        public string RefreshTokenTextBox { get; set; }
+        public string AccessTokenValidTextBox { get; set; }
+
+        #endregion
         public string GetConfig(string name)
         {
             try

@@ -160,3 +160,6 @@ C:\Users\User\Documents\GitHub\Altis\AltApi\v0\AltisAPI\obj\Debug\AltisAPI.cspro
 C:\Users\User\Documents\GitHub\Altis\AltApi\v0\AltisAPI\obj\Debug\AltisAPI.csproj.CopyComplete
 C:\Users\User\Documents\GitHub\Altis\AltApi\v0\AltisAPI\obj\Debug\AltisAPI.dll
 C:\Users\User\Documents\GitHub\Altis\AltApi\v0\AltisAPI\obj\Debug\AltisAPI.pdb
+C:\Users\User\Documents\GitHub\Altis\AltApi\v0\AltisAPI\bin\OneDriveApi.dll
+C:\Users\User\Documents\GitHub\Altis\AltApi\v0\AltisAPI\bin\OneDriveApi.pdb
+C:\Users\User\Documents\GitHub\Altis\AltApi\v0\AltisAPI\bin\OneDriveApi.dll.config

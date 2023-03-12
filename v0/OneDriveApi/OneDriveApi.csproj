@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{228C55C2-5D5A-4618-BA99-10493F465EE0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OneDriveApi</RootNamespace>
+    <AssemblyName>OneDriveApi</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.7.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Runtime.Serialization.Primitives, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.Serialization.Primitives.4.3.0\lib\net46\System.Runtime.Serialization.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.7.0.0\lib\net462\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=7.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.7.0.2\lib\net462\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entities\GraphApiUploadSessionItem.cs" />
+    <Compile Include="Entities\GraphApiUploadSessionItemContainer.cs" />
+    <Compile Include="Entities\OneDriveAccessToken.cs" />
+    <Compile Include="Entities\OneDriveAsyncTask.cs" />
+    <Compile Include="Entities\OneDriveAsyncTaskStatus.cs" />
+    <Compile Include="Entities\OneDriveAudioFacet.cs" />
+    <Compile Include="Entities\OneDriveCollectionResponse.cs" />
+    <Compile Include="Entities\OneDriveCreateFolder.cs" />
+    <Compile Include="Entities\OneDriveDrive.cs" />
+    <Compile Include="Entities\OneDriveDriveRecipient.cs" />
+    <Compile Include="Entities\OneDriveError.cs" />
+    <Compile Include="Entities\OneDriveErrorDetail.cs" />
+    <Compile Include="Entities\OneDriveFileFacet.cs" />
+    <Compile Include="Entities\OneDriveFolderFacet.cs" />
+    <Compile Include="Entities\OneDriveForBusinessSharePointId.cs" />
+    <Compile Include="Entities\OneDriveHashesFacet.cs" />
+    <Compile Include="Entities\OneDriveIdentity.cs" />
+    <Compile Include="Entities\OneDriveIdentitySet.cs" />
+    <Compile Include="Entities\OneDriveImageFacet.cs" />
+    <Compile Include="Entities\OneDriveItem.cs" />
+    <Compile Include="Entities\OneDriveItemBase.cs" />
+    <Compile Include="Entities\OneDriveItemCollection.cs" />
+    <Compile Include="Entities\OneDriveItemReference.cs" />
+    <Compile Include="Entities\OneDriveLocationFacet.cs" />
+    <Compile Include="Entities\OneDriveParentItemReference.cs" />
+    <Compile Include="Entities\OneDrivePermission.cs" />
+    <Compile Include="Entities\OneDrivePermissionRequest.cs" />
+    <Compile Include="Entities\OneDrivePermissionResponse.cs" />
+    <Compile Include="Entities\OneDrivePermissionResponseGrant.cs" />
+    <Compile Include="Entities\OneDrivePermissionResponseInvitation.cs" />
+    <Compile Include="Entities\OneDrivePhotoFacet.cs" />
+    <Compile Include="Entities\OneDriveQuotaFacet.cs" />
+    <Compile Include="Entities\OneDriveRemoteItem.cs" />
+    <Compile Include="Entities\OneDriveRequestShare.cs" />
+    <Compile Include="Entities\OneDriveSharedItem.cs" />
+    <Compile Include="Entities\OneDriveSharedWithMeItem.cs" />
+    <Compile Include="Entities\OneDriveSharedWithMeItemCollection.cs" />
+    <Compile Include="Entities\OneDriveSharingLinkFacet.cs" />
+    <Compile Include="Entities\OneDriveSpecialFolderFacet.cs" />
+    <Compile Include="Entities\OneDriveThumbnail.cs" />
+    <Compile Include="Entities\OneDriveThumbnailSet.cs" />
+    <Compile Include="Entities\OneDriveTombstoneFacet.cs" />
+    <Compile Include="Entities\OneDriveUploadProgressChangedEventArgs.cs" />
+    <Compile Include="Entities\OneDriveUploadSession.cs" />
+    <Compile Include="Entities\OneDriveUploadSessionItem.cs" />
+    <Compile Include="Entities\OneDriveUploadSessionItemContainer.cs" />
+    <Compile Include="Entities\OneDriveUserAccount.cs" />
+    <Compile Include="Entities\OneDriveUserProfile.cs" />
+    <Compile Include="Entities\OneDriveVideoFacet.cs" />
+    <Compile Include="Entities\OneDriveViewChangesResult.cs" />
+    <Compile Include="Entities\ServiceDiscoveryItem.cs" />
+    <Compile Include="Entities\ServiceDiscoverySet.cs" />
+    <Compile Include="Entities\SharePointSite.cs" />
+    <Compile Include="Enums\NameConflictBehavior.cs" />
+    <Compile Include="Enums\OneDriveAsyncJobStatus.cs" />
+    <Compile Include="Enums\OneDriveAsyncJobType.cs" />
+    <Compile Include="Enums\OneDriveDriveType.cs" />
+    <Compile Include="Enums\OneDriveKnownFolder.cs" />
+    <Compile Include="Enums\OneDriveLinkType.cs" />
+    <Compile Include="Enums\OneDriveQuotaState.cs" />
+    <Compile Include="Enums\OneDriveResyncLogic.cs" />
+    <Compile Include="Enums\OneDriveSharingScope.cs" />
+    <Compile Include="Exceptions\InvalidResponseException.cs" />
+    <Compile Include="Exceptions\TokenRetrievalFailedException.cs" />
+    <Compile Include="Helpers\QueryStringBuilder.cs" />
+    <Compile Include="OneDriveApi.cs" />
+    <Compile Include="OneDriveConsumerApi.cs" />
+    <Compile Include="OneDriveForBusinessO365Api.cs" />
+    <Compile Include="OneDriveGraphApi.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
